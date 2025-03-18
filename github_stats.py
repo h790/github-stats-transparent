@@ -311,7 +311,7 @@ Languages:
             repos = owned_repos.get("nodes", [])
             if self._consider_forked_repos:
                 repos += contrib_repos.get("nodes", [])
-            else:
+            elif repos is not None:
                 for repo in contrib_repos.get("nodes", []):
                     name = repo.get("nameWithOwner")
                     if name in self._ignored_repos or name in self._exclude_repos:
